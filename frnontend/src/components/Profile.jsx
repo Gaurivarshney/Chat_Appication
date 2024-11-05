@@ -29,7 +29,7 @@ const Profile = () => {
 
   const handleFollowToggle = async () => {
     try {
-      const response = await axios.post(`http://localhost:8000/api/v1/user/followorunfollow/${userProfile._id}`,{}, {withCredentials:true});
+      const response = await axios.post(`https://chat-appication-backend.onrender.com/api/v1/user/followorunfollow/${userProfile._id}`,{}, {withCredentials:true});
       if (response.data.success) {
         dispatch(toggleFollow(userProfile._id));
       }
