@@ -43,7 +43,7 @@ const Post = ({ post }) => {
     try {
       const action = liked ? "dislike" : "like";
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${post._id}/${action}`,
+        `https://chat-appication-backend.onrender.com/api/v1/post/${post._id}/${action}`,
         { withCredentials: true }
       );
       console.log(res.data);
@@ -74,7 +74,7 @@ const Post = ({ post }) => {
   const commentHandler = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/post/${post._id}/comment`,
+        `https://chat-appication-backend.onrender.com/api/v1/post/${post._id}/comment`,
         { text },
         {
           headers: {
@@ -104,7 +104,7 @@ const Post = ({ post }) => {
   const deletePostHandler = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:8000/api/v1/post/delete/${post?._id}`,
+        `https://chat-appication-backend.onrender.com/api/v1/post/delete/${post?._id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -123,7 +123,7 @@ const Post = ({ post }) => {
   const bookmarkHandler = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${post?._id}/bookmark`,
+        `https://chat-appication-backend.onrender.com/api/v1/post/${post?._id}/bookmark`,
         { withCredentials: true }
       );
       if (res.data.success) {
