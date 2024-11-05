@@ -10,7 +10,7 @@ const SuggestedUsers = () => {
   const dispatch = useDispatch();
   const followOrUnfollowUser = async (targetUserId) => {
     try {
-      const response = await axios.post(`http://localhost:8000/api/v1/user/followorunfollow/${targetUserId}`,{}, { withCredentials: true });
+      const response = await axios.post(`https://chat-appication-backend.onrender.com/api/v1/user/followorunfollow/${targetUserId}`,{}, { withCredentials: true });
       return response.data;
     } catch (error) {
       console.error("Error following/unfollowing user:", error);
